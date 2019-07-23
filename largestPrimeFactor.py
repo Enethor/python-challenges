@@ -7,4 +7,4 @@ while number > 1:
         number = int(number/i)
     i += 1
 else:
-    print('The largest prime factor is: %i' % (i-1))
+    print(i-1)
