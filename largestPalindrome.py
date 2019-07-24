@@ -2,22 +2,19 @@
 
 
 def find_largest_palindrome():
-    palindromes = []
+    highest_palindrome = 0
     for x in range(100, 1000):
         for z in range(100, 1000):
-            if check_palindrome(x*z):
-                palindromes.append(x*z)
-    palindromes.sort()
-    print(palindromes[-1])
+            prod = x * z
+            if check_palindrome(prod):
+                if prod > highest_palindrome:
+                    highest_palindrome = prod
+    print(highest_palindrome)
 
 
 def check_palindrome(number):
-    string_number = str(number)
-    reversed_string = string_number[::-1]
-    if string_number == reversed_string:
-        return True
-    else:
-        return False
+    s = str(number)
+    return s == s[::-1]
 
 
 find_largest_palindrome()
